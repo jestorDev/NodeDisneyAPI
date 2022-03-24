@@ -1,6 +1,8 @@
 import express from "express";
 import path from "path";
 
+import sequelize from "./db_sequelize"
+
 import { loadApiEndpoints } from "./controllers/api";
 
 // Create Express server
