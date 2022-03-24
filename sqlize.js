@@ -20,11 +20,14 @@ async function initTables() {
         console.log("Len:", dataArr.length);
         let promises = []
         for (const elem of dataArr) {
-            promises.push(model.create(elem))
+            promises.push(model.findOrCreate(elem))
         }
 
-        await Promise.all(promises)
+        
 
+
+        await Promise.all(promises)
+        
 
 
     }
@@ -129,13 +132,6 @@ async function initTables() {
         where: { name: 'Simba' }
     });
     console.log(result);
-    //setTimeout(
-    //    async ()=>{
-    //        
-    //    }
-    //    , 10000
-    //)
-
 
 }
 
